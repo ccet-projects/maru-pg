@@ -1,0 +1,37 @@
+{
+    "name": "@maru/pg",
+    "version": "1.0.0",
+    "description": "PostreSQL component for Maru framework",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:ccet-projects/maru-pg.git"
+    },
+    "homepage": "https://github.com/ccet-projects/maru-pg#readme",
+    "author": "Sergey Lukin <contact@lukin.site>",
+    "license": "UNLICENSED",
+    "type": "module",
+    "exports": "./index.js",
+    "scripts": {
+        "test": "node --test"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "dependencies": {
+        "pg": "^8.11.3"
+    },
+    "peerDependencies": {
+        "maru": "github:ccet-projects/maru#v1.0.4"
+    },
+    "devDependencies": {
+        "eslint": "x",
+        "eslint-config-maru": "github:ccet-projects/eslint-config-maru",
+        "eslint-plugin-import": "x"
+    },
+    "eslintConfig": {
+        "root": true,
+        "extends": [
+            "maru"
+        ]
+    }
+}
