@@ -1,6 +1,6 @@
 {
     "name": "@maru/pg",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "PostreSQL component for Maru framework",
     "repository": {
         "type": "git",
@@ -21,7 +21,7 @@
         "pg": "^8.11.3"
     },
     "peerDependencies": {
-        "maru": "github:ccet-projects/maru#v1.0.4"
+        "maru": "github:ccet-projects/maru#v1.0.6"
     },
     "devDependencies": {
         "eslint": "x",
