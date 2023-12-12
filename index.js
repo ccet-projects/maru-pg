@@ -111,7 +111,7 @@ export default class Pg {
         }
       }));
     }
-    this.app.pg = Object.keys(this.pools).length === 1 ? this.pools[0] : this.pools;
+    this.app.pg = this.pools.default ?? this.pools;
   }
 
   #getPool(config) {
