@@ -141,6 +141,7 @@ export default class Pg {
   async #connect(pool, database) {
     try {
       const client = await pool.connect();
+      pool.tables = rows.map((record) => (`${record.schemaname}.${record.tablename}`));
       await client.release();
       this.app.logger.debug(`База данных ${database} подключена`);
     } catch (error) {

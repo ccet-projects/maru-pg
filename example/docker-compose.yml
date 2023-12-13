@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: test-maru-pg
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      POSTGRES_DB: maru
+      POSTGRES_PASSWORD: qwerty
+    ports:
+      - 5432:5432
+    logging:
+      driver: none
