@@ -11,10 +11,33 @@ describe('Запуск', () => {
 
   after(() => app?.stop());
 
-  it('Подключение компонента', async () => {
-    app = maru(import.meta.url, [pg]);
+  it('Обычное подключение компонента', async () => {
+    app = maru(import.meta.url, [pg], {
+      pg: {
+        user: 'postgres',
+        password: 'qwerty',
+        database: 'maru'
+      }
+    });
     await app.start();
     assert.ok(app.pg);
+    await app.stop();
+    app = null;
+  });
+
+  it('Подключение нескольких баз данных одновременно', async () => {
+    app = maru(import.meta.url, [pg], {
+      pg: {
+        user: 'postgres',
+        password: 'qwerty',
+        a: { database: 'maru' },
+        b: { database: 'maru' }
+      }
+    });
+    await app.start();
+    assert.ok(app.pg.a);
+    assert.ok(app.pg.b);
+    assert.notEqual(app.pg.a, app.pg.b);
     await app.stop();
     app = null;
   });
